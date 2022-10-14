@@ -1,0 +1,320 @@
+@import "variables";
+@import "normalize";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+//@font-face {
+//  font-family: 'Open-Sans';
+//  font-weight: 400;
+//  font-style: normal;
+//  src: url("src/assets/fonts");
+//}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: $background;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+.ticket-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.ticket-element{
+  max-width: 341px;
+  margin: 26px 0 0 0;
+  border: 1px solid $border-element;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: $large ) {
+    min-width: 1070px;
+    min-height: 368px;
+    flex-direction: row;
+    border-radius: 15px;
+  }
+}
+
+.ticket__image-container{
+  overflow: hidden;
+  box-shadow: 0 4px 4px rgb(0,0,0, 25%);
+  @media screen and (min-width: $large ) {
+    min-height: 368px;
+    min-width: 473px;
+    box-shadow: none;
+  }
+}
+.ticket__image{
+  @media screen and (min-width: $large ) {
+    height: 100%;
+    max-width: 473px;
+  }
+}
+
+.ticket__content-container{
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: $large ) {
+    margin-left: 12px;
+  }
+}
+
+.ticket__label{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding: 5px;
+  width: 99px;
+  height: 35px;
+  position: absolute;
+  margin-top: 41px;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  @media screen and (min-width: $large ) {
+    font-size: 16px;
+    width: fit-content;
+    padding: 0 33px 0 33px;
+  }
+}
+.yellow{
+  background-color: $label-yellow;
+}
+.blue{
+  background-color: $label-blue;
+  color: white;
+}
+.ticket__time-container{
+  margin: 16px 0 15px 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @media screen and (min-width: $large ) {
+    margin: 0 0 9px 11px;
+  }
+}
+
+.ticket__time{
+  margin-left: 9px;
+  color: $time-text;
+}
+.ticket__time-image{
+  width: 16px;
+  height: 16px;
+}
+.ticket__title{
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 16px 12px 0 12px;
+  color: $title-text;
+  margin-bottom: 30px;
+  @media screen and (min-width: $large ) {
+    order: -1;
+    margin-bottom: 11px;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 34px;
+  }
+}
+
+.ticket__details-list{
+  margin-left: 49px;
+  margin-right: 49px;
+  @media screen and (min-width: $large ) {
+    margin-right: 0;
+
+  }
+}
+
+.ticket__details-image{
+  position: absolute;
+  margin-left: -37px;
+}
+
+.ticket__details-element{
+  margin-bottom: 9px;
+  color: $details-element;
+  @media screen and (min-width: $large ) {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 14px;
+  }
+}
+
+.ticket__times-list{
+  display: flex;
+  flex-direction: row;
+  width: 126px;
+  flex-wrap: wrap;
+  align-items: center;
+  @media screen and (min-width: $large ) {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+}
+.ticket_about{
+  @media screen and (min-width: $large ) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.ticket__times-element{
+  background-color: $times-element;
+  padding: 3px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 11px;
+  &:hover{
+    background: $times-element-hover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 11px;
+    color: white;
+  }
+
+}
+
+.ticket__flex-container{
+  display: flex;
+  align-items: flex-start;
+  @media screen and (min-width: $large ) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.ticket__today{
+  margin-bottom: 9px;
+  color: $details-element;
+  margin-left: 49px;
+  width: 40%;
+  @media screen and (min-width: $large ) {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 14px;
+  }
+  &:before{
+    content: "";
+    position: absolute;
+    margin-left: -36px;
+    min-height: 20px;
+    min-width: 20px;
+    background: url('~@/assets/images/check.png') no-repeat;
+    @media screen and (min-width: $large ) {
+
+    }
+  }
+}
+
+.ticket__price-and-button{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  margin-top: 30px;
+  @media screen and (min-width: $large ) {
+    margin-bottom: 5px;
+    justify-content: flex-start;
+    margin-top: 13px;
+  }
+}
+
+.ticket__price-container{
+  margin-left: 19px;
+  @media screen and (min-width: $large ) {
+    margin-left: 13px;
+    margin-right: 13px;
+
+  }
+}
+
+.ticket__price{
+  font-size: 30px;
+  line-height: 20px;
+  span{
+    margin-left: 3px;
+    font-weight: 100;
+  }
+  @media screen and (min-width: $large ) {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 20px;
+  }
+}
+.ticket__discount{
+  font-size: 10px;
+  line-height: 20px;
+  @media screen and (min-width: $large ) {
+    margin-top: 6px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.ticket__button{
+  color: $title-text;
+  width: 165px;
+  height: 44px;
+  background: $label-yellow;
+  border: 1px solid #CBA500;
+  border-radius: 20px;
+  margin-right: 19px;
+  @media screen and (min-width: $large ) {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    border: none;
+    width: 187px;
+    height: 52px;
+  }
+}
+
+.ticket__else-button{
+  background-color: $label-yellow;
+  margin-right: 5px;
+  width: 50px;
+  height: 27px;
+  padding: 2px;
+  border-radius: 5px;
+  text-align: center;
+  user-select: none;
+}
+.ticket__times-container{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+
