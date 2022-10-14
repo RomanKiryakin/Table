@@ -60,7 +60,6 @@ img {
 
 .ticket__image-container{
   overflow: hidden;
-  box-shadow: 0 4px 4px rgb(0,0,0, 25%);
   @media screen and (min-width: $large ) {
     min-height: 368px;
     min-width: 473px;
@@ -68,6 +67,7 @@ img {
   }
 }
 .ticket__image{
+  box-shadow: 0 4px 4px rgb(0,0,0, 25%);
   @media screen and (min-width: $large ) {
     height: 100%;
     max-width: 473px;
